@@ -1,5 +1,6 @@
 # 💡 Introduction to Observability
 - Observability is the ability to understand the internal state of a system by analyzing the data it produces, including logs, metrics, and traces.
+- internal state of a system contains: app,infrastructure(cpu etc,),networking(latency,http traffic)
 
 - Monitoring(Metrics): involves tracking system metrics like CPU usage, memory usage, and network performance. Provides alerts based on predefined thresholds and conditions
     - `Monitoring tells us what is happening.`
