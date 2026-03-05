@@ -5,7 +5,7 @@ const express = require('express');
 const morgan = require('morgan');
 const pino = require('pino');
 const axios = require('axios');
-const promClient = require('prom-client');
+const promClient = require('prom-client');//use prom-client(can use opentelemetry instead) for collecting metrics data
 
 const app = express();
 
