@@ -28,7 +28,7 @@ const PORT = 3001;
 const httpRequestCounter = new promClient.Counter({
     name: 'http_requests_total',
     help: 'Total number of HTTP requests',
-    labelNames: ['method', 'path', 'status_code'],
+    labelNames: ['method', 'path', 'status_code'],//label for querying metrics data
 });
 
 const requestDurationHistogram = new promClient.Histogram({
@@ -69,6 +69,7 @@ app.use((req, res, next) => {
         const duration = (Date.now() - start) / 1000; // Duration in seconds
         const { method, url } = req;
         const statusCode = res.statusCode; // Get the actual HTTP status code
+        // record matrics
         httpRequestCounter.labels({ method, path: url, status_code: statusCode }).inc();
         requestDurationHistogram.labels({ method, path: url, status_code: statusCode }).observe(duration);
         requestDurationSummary.labels({ method, path: url, status_code: statusCode }).observe(duration);
