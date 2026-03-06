@@ -31,7 +31,7 @@
 
 ### Step 2: Components of Jaeger
 - Jaeger consists of several components:
-- Agent: Collects traces from your application.
+- Agent: Collects traces from your application and forward trace to Collector.
 - Collector: Receives traces from the agent and processes them.
 - Query: Provides a UI to view traces.
 - Storage: Stores traces for later retrieval (often a database like *Elasticsearch*).
